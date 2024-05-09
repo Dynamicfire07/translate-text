@@ -28,7 +28,9 @@ with column1:
         "Indonesian"
     ]
                              )
-    input = st.text_area("Enter Text to be translated",key="1")
+    translate_to_be = st.text_area("Enter Text to be translated",key="1")
+
+
 
 
 with column2:
@@ -56,5 +58,6 @@ with column2:
     ])
 
     lang1,lang2 = converstion(input_lang=language1,output_lang=language2)
+    translated_text = translate(input=lang1,output=lang2,translate_text=translate_to_be)
 
-
+    st.text_area("Output: ",value=translated_text,disabled=True)
